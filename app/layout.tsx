@@ -5,9 +5,9 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Coyote Detailing',
+  description: 'Professional car detailing services that come to you. Serving DFW, Frisco, and McKinney with luxury care for your vehicle.',
+  generator: 'The Linkage Digital',
 }
 
 export default function RootLayout({

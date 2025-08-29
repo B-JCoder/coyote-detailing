@@ -210,118 +210,151 @@ export default function CoyoteDetailingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="pt-16 min-h-screen flex items-center relative overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${themeClasses.heroBg}`}>
-          <div
-            className={`absolute inset-0 ${isDarkMode ? "bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.2),transparent_50%)]" : "bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.15),transparent_50%)]"}`}
-          ></div>
-          <div
-            className={`absolute inset-0 ${isDarkMode ? "bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.15),transparent_50%)]" : "bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]"}`}
-          ></div>
+<section
+  id="hero"
+  className="pt-16 min-h-screen flex items-center relative overflow-hidden"
+>
+  {/* Background Gradients */}
+  <div className={`absolute inset-0 bg-gradient-to-br ${themeClasses.heroBg}`}>
+    <div
+      className={`absolute inset-0 ${
+        isDarkMode
+          ? "bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.2),transparent_50%)]"
+          : "bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.15),transparent_50%)]"
+      }`}
+    ></div>
+    <div
+      className={`absolute inset-0 ${
+        isDarkMode
+          ? "bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.15),transparent_50%)]"
+          : "bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]"
+      }`}
+    ></div>
+  </div>
+
+  {/* Floating Circles */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute top-1/4 left-1/4 w-2 sm:w-3 h-2 sm:h-3 bg-primary/40 rounded-full animate-pulse"></div>
+    <div className="absolute top-1/3 right-1/3 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent/60 rounded-full animate-ping"></div>
+    <div className="absolute bottom-1/4 left-1/3 w-3 sm:w-4 h-3 sm:h-4 bg-primary/30 rounded-full animate-bounce"></div>
+    <div className="absolute top-1/2 right-1/4 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-accent/50 rounded-full animate-pulse delay-1000"></div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10">
+    <div className="text-center">
+      {/* Logo */}
+      <div className="mb-8 sm:mb-12 animate-fade-in">
+        <div className="relative inline-block">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl rounded-full scale-150 animate-pulse"></div>
+          <img
+            src="/images/coyote-logo-new.png"
+            alt="Coyote Detailing Logo"
+            className="relative h-24 sm:h-32 md:h-40 lg:h-48 w-auto mx-auto drop-shadow-2xl animate-float filter brightness-110 max-w-[90%]"
+          />
         </div>
+      </div>
 
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent/60 rounded-full animate-ping"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-primary/30 rounded-full animate-bounce"></div>
-          <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-accent/50 rounded-full animate-pulse delay-1000"></div>
-        </div>
+      {/* Headline */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-balance animate-fade-in-up leading-tight sm:leading-snug">
+        <span className={`bg-gradient-to-r ${themeClasses.heroText} bg-clip-text text-transparent`}>
+          Premium Mobile
+        </span>
+        <br />
+        <span
+          className={`bg-gradient-to-r ${
+            isDarkMode
+              ? "from-purple-200 via-blue-200 to-white"
+              : "from-purple-600 via-blue-600 to-gray-800"
+          } bg-clip-text text-transparent`}
+        >
+          Car Detailing
+        </span>
+      </h1>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10">
-          <div className="text-center">
-            <div className="mb-8 sm:mb-12 animate-fade-in">
-              <div className="relative inline-block">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl rounded-full scale-150 animate-pulse"></div>
-                <img
-                  src="/images/coyote-logo-new.png"
-                  alt="Coyote Detailing Logo"
-                  className="relative h-32 sm:h-40 md:h-48 w-auto mx-auto drop-shadow-2xl animate-float filter brightness-110"
-                />
-              </div>
-            </div>
+      {/* Subtext */}
+      <p
+        className={`text-base sm:text-lg md:text-xl lg:text-2xl ${themeClasses.heroSubtext} mb-8 sm:mb-10 max-w-4xl mx-auto text-pretty animate-fade-in-up delay-200 leading-relaxed px-2 sm:px-4`}
+      >
+        Professional car detailing services that come to you. Serving DFW, Frisco, and McKinney with{" "}
+        <span className={`${isDarkMode ? "text-white" : "text-gray-900"} font-semibold`}>luxury care</span> for
+        your vehicle.
+      </p>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-balance animate-fade-in-up">
-              <span className={`bg-gradient-to-r ${themeClasses.heroText} bg-clip-text text-transparent`}>
-                Premium Mobile
-              </span>
-              <br />
-              <span
-                className={`bg-gradient-to-r ${isDarkMode ? "from-purple-200 via-blue-200 to-white" : "from-purple-600 via-blue-600 to-gray-800"} bg-clip-text text-transparent`}
-              >
-                Car Detailing
-              </span>
-            </h1>
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 animate-fade-in-up delay-300 px-2 sm:px-4">
+        <Button
+          size="lg"
+          className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 hover:from-purple-500 hover:via-blue-500 hover:to-purple-600 text-white px-8 sm:px-10 py-3 sm:py-4 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-110 group border-0 rounded-full w-full sm:w-auto"
+          onClick={() => scrollToSection("booking")}
+        >
+          Book Your Service
+          <ArrowRight
+            className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-300"
+            size={20}
+          />
+        </Button>
+        <Button
+          variant="outline"
+          size="lg"
+          className="px-8 sm:px-10 py-3 sm:py-4 text-lg sm:text-xl font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-110 rounded-full w-full sm:w-auto"
+          onClick={() => scrollToSection("services")}
+        >
+          View Services
+        </Button>
+      </div>
 
-            <p
-              className={`text-lg sm:text-xl md:text-2xl ${themeClasses.heroSubtext} mb-8 sm:mb-10 max-w-4xl mx-auto text-pretty animate-fade-in-up delay-200 leading-relaxed px-4`}
-            >
-              Professional car detailing services that come to you. Serving DFW, Frisco, and McKinney with
-              <span className={`${isDarkMode ? "text-white" : "text-gray-900"} font-semibold`}> luxury care</span> for
-              your vehicle.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 animate-fade-in-up delay-300 px-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 hover:from-purple-500 hover:via-blue-500 hover:to-purple-600 text-white px-8 sm:px-10 py-3 sm:py-4 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-110 group border-0 rounded-full w-full sm:w-auto"
-                onClick={() => scrollToSection("booking")}
-              >
-                Book Your Service
-                <ArrowRight
-                  className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-300"
-                  size={20}
-                />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-8 sm:px-10 py-3 sm:py-4 text-lg sm:text-xl font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-110 rounded-full w-full sm:w-auto"
-                onClick={() => scrollToSection("services")}
-              >
-                View Services
-              </Button>
-            </div>
-
-            <div
-              className={`flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-8 text-base sm:text-lg ${isDarkMode ? "text-blue-100/80" : "text-gray-600"} animate-fade-in-up delay-400 px-4`}
-            >
-              <div
-                className={`flex items-center gap-3 hover:${isDarkMode ? "text-white" : "text-gray-900"} transition-colors duration-300 group justify-center sm:justify-start`}
-              >
-                <div
-                  className={`p-2 ${isDarkMode ? "bg-white/10" : "bg-gray-200"} rounded-full group-hover:${isDarkMode ? "bg-white/20" : "bg-gray-300"} transition-all duration-300`}
-                >
-                  <MapPin size={20} />
-                </div>
-                <span className="font-medium">DFW • Frisco • McKinney</span>
-              </div>
-              <div className="flex items-center gap-3 justify-center sm:justify-start">
-                <div
-                  className={`p-2 ${isDarkMode ? "bg-white/10" : "bg-gray-200"} rounded-full hover:${isDarkMode ? "bg-white/20" : "bg-gray-300"} transition-all duration-300`}
-                >
-                  <Phone size={20} />
-                </div>
-                <button
-                  onClick={handlePhoneCall}
-                  className={`hover:${isDarkMode ? "text-white" : "text-gray-900"} transition-all duration-300 hover:scale-105 font-medium`}
-                >
-                  469-999-3453
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Location & Contact */}
+      <div
+        className={`flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-8 text-sm sm:text-base md:text-lg ${
+          isDarkMode ? "text-blue-100/80" : "text-gray-600"
+        } animate-fade-in-up delay-400 px-2 sm:px-4`}
+      >
+        <div
+          className={`flex items-center gap-3 hover:${
+            isDarkMode ? "text-white" : "text-gray-900"
+          } transition-colors duration-300 group justify-center sm:justify-start`}
+        >
           <div
-            className={`w-6 h-10 border-2 ${isDarkMode ? "border-white/30" : "border-gray-400"} rounded-full flex justify-center`}
+            className={`p-2 ${isDarkMode ? "bg-white/10" : "bg-gray-200"} rounded-full group-hover:${
+              isDarkMode ? "bg-white/20" : "bg-gray-300"
+            } transition-all duration-300`}
           >
-            <div
-              className={`w-1 h-3 ${isDarkMode ? "bg-white/50" : "bg-gray-500"} rounded-full mt-2 animate-pulse`}
-            ></div>
+            <MapPin size={20} />
           </div>
+          <span className="font-medium">DFW • Frisco • McKinney</span>
         </div>
-      </section>
+        <div className="flex items-center gap-3 justify-center sm:justify-start">
+          <div
+            className={`p-2 ${isDarkMode ? "bg-white/10" : "bg-gray-200"} rounded-full hover:${
+              isDarkMode ? "bg-white/20" : "bg-gray-300"
+            } transition-all duration-300`}
+          >
+            <Phone size={20} />
+          </div>
+          <button
+            onClick={handlePhoneCall}
+            className={`hover:${isDarkMode ? "text-white" : "text-gray-900"} transition-all duration-300 hover:scale-105 font-medium`}
+          >
+            469-999-3453
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Scroll Indicator */}
+  <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div
+      className={`w-5 sm:w-6 h-8 sm:h-10 border-2 ${isDarkMode ? "border-white/30" : "border-gray-400"} rounded-full flex justify-center`}
+    >
+      <div
+        className={`w-1 h-3 sm:w-1.5 sm:h-3 ${isDarkMode ? "bg-white/50" : "bg-gray-500"} rounded-full mt-2 animate-pulse`}
+      ></div>
+    </div>
+  </div>
+</section>
+
 
       {/* About Section */}
       <section id="about" className={`py-16 sm:py-20 ${themeClasses.sectionBg} relative`}>
